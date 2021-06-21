@@ -22,3 +22,5 @@ flutter:
       android:
         package: com.spacycoder.flutter_exif_plugin
         pluginClass: FlutterExifPlugin
+      ios:
+        pluginClass: FlutterExifPlugin
