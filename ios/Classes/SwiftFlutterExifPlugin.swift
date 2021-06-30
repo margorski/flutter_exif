@@ -75,13 +75,13 @@ public class SwiftFlutterExifPlugin: NSObject, FlutterPlugin {
                         result("cannot recognize arguments in method: \(call.method)")
                         return
                     }
-                    let tag = ((args as AnyObject)["tag"]! as? String)
+                    let tag = ((args as AnyObject)["tag"] as? String)
                     if (tag == nil) {
                         result(FlutterError(code: "ARGUMENT_ERROR", message: "tag is required", details: nil))
                         return
                     }
                     
-                    let tagValue = ((args as AnyObject)["tagValue"]! as? String)
+                    let tagValue = ((args as AnyObject)["tagValue"] as? String)
                     if (tagValue == nil) {
                         result(FlutterError(code: "ARGUMENT_ERROR", message: "tagValue is required", details: nil))
                     }
@@ -128,13 +128,13 @@ public class SwiftFlutterExifPlugin: NSObject, FlutterPlugin {
                         result("cannot recognize arguments in method: \(call.method)")
                         return
                     }
-                    let latitude = ((args as AnyObject)["latitude"]! as? Double)
+                    let latitude = ((args as AnyObject)["latitude"] as? Double)
                     if (latitude == nil) {
                         result(FlutterError(code: "ARGUMENT_ERROR", message: "latitude is required", details: nil))
                         return
                     }
                     
-                    let longitude = ((args as AnyObject)["longitude"]! as? Double)
+                    let longitude = ((args as AnyObject)["longitude"] as? Double)
                     if (longitude == nil) {
                         result(FlutterError(code: "ARGUMENT_ERROR", message: "longitude is required", details: nil))
                     }

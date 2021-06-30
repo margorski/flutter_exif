@@ -42,8 +42,8 @@ public class ExifFileInterface {
         let imageRef: CGImageSource = CGImageSourceCreateWithData((imageData as CFData), nil)!
         let imageProperties = CGImageSourceCopyPropertiesAtIndex(imageRef, 0, nil)! as NSDictionary
         
-        let EXIFDictionary = (imageProperties[kCGImagePropertyExifDictionary as String] as? NSDictionary)!
-        let GPSDictionary = (imageProperties[kCGImagePropertyGPSDictionary as String] as? NSDictionary)!
+        let EXIFDictionary = (imageProperties[kCGImagePropertyExifDictionary as String] as? NSDictionary) ?? [:] as NSDictionary
+        let GPSDictionary = (imageProperties[kCGImagePropertyGPSDictionary as String] as? NSDictionary) ?? [:] as NSDictionary
         
         for (k, v) in EXIFDictionary {
             setAttribute(tag: k as! String, value: v)
