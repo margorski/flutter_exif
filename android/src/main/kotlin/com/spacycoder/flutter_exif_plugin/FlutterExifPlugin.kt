@@ -11,7 +11,7 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
 import java.io.File
-
+import java.util.UUID;
 
 const val flutter_exif_plugin_CHANNEL = "flutter_exif_plugin_channel"
 
@@ -43,7 +43,9 @@ public class FlutterExifPlugin : FlutterPlugin, MethodCallHandler {
     }
 
     private fun getExifInterfaceAndFile(bytes: ByteArray): Pair<ExifInterface, File> {
-        val tmpFile = File.createTempFile("flutter_exif_plugin_image", null, context.cacheDir)
+        var randomUUID = UUID.randomUUID();
+        var randomFilename = "flutter_exif_plugin-$randomUUID.toString()";
+        val tmpFile = File.createTempFile(randomFilename, null, context.cacheDir)
         tmpFile.writeBytes(bytes)
 
         return Pair(ExifInterface(tmpFile), tmpFile)
